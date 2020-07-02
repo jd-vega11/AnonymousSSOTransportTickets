@@ -9,13 +9,71 @@
   -  Application strings.
   -
   -  @author Matthew Casey
+  -  Modified by Juan D. Vega (Universidad de los Andes - Colombia)
 -->
 <resources>
 
   <!-- Top-level strings. -->
-  <!--string name="app_name">DICE</string-->
-  <string name="apdu_service">DICE NFC Evaluation</string>
+  <!--  <string name="app_name">RuedaS</string>-->
+  <string name="apdu_service">AnonSSO real context prototype</string>
   <string name="noProcessingText">No Processing</string>
   <string name="processingText">Processing %1$s</string>
+  <string name="serviceDescription">Service to connect and pass data between your device and the NFC reader</string>
+
+  <string name="app_name_top_bar">RuedaS</string>
+  <string name="l_login_username">Usuario</string>
+  <string name="l_login_password">Clave</string>
+  <string name="b_login">Iniciar Sesión</string>
+  <string name="b_signup">Registrarse</string>
+
+  <string name="l_signup">Registro</string>
+  <string name="l_signup_username">Usuario</string>
+  <string name="l_signup_password">Clave</string>
+  <string name="l_signup_city">Ciudad de residencia</string>
+  <string name="l_signup_name">Nombre</string>
+  <string name="l_signup_lastname">Apellido</string>
+
+  <string name="b_new_ticket">Nuevo viaje</string>
+  <string name="b_add_funds_card">Recargar tarjeta móvil</string>
+  <string name="b_history">Historial de viajes</string>
+  <string name="b_payment_method">Otras formas de pago</string>
+
+  <string name="l_nuevo_tiquete">Nuevo tiquete</string>
+  <string name="l_opciones_transporte">Selecciona los medios de transporte que quieres incluir en tu viaje</string>
+  <string name="l_aclaracion_tren">En caso de seleccionar Tren, más adelante te pediremos información adicional de fecha, origen y destino</string>
+
+  <string name="l_transmilenio">Transmilenio</string>
+  <string name="l_sitp">SITP Zonal</string>
+  <string name="l_tren">Tren</string>
+  <string name="l_metro">Metro</string>
+
+  <string name="l_transmilenio_valor">$ 2.500</string>
+  <string name="l_sitp_valor">$ 2.300</string>
+  <string name="l_metro_valor">$ 2.800</string>
+
+  <string name="l_tren_titulo">Viaje en tren</string>
+  <string name="l_tren_subtitulo">Proporciona los datos de tu viaje en tren para calcular la tarifa correspondiente y agregarla al tiquete general</string>
+  <string name="l_tren_fecha">Fecha</string>
+  <string name="l_tren_hora">Hora</string>
+  <string name="l_tren_origen">Origen</string>
+  <string name="l_tren_destino">Destino</string>
+  <string name="l_tren_tarifa">Tarifa</string>
+  <string name="l_tren_fecha_helper_text">Haga click en el icono del calendario para seleccionar la fecha de viaje</string>
+  <string name="l_tren_tarifa_helper_text">Una vez ingreses todos los datos se actualizará el valor de la tarifa</string>
+
+  <string name="l_resumen_titulo">Nuevo viaje</string>
+  <string name="l_resumen_subtitulo">Resumen de tu compra. Verifica que todo es correcto antes de efectuar la transacción</string>
+
+  <string name="l_detalle_titulo">Tiquete</string>
+  <string name="l_detalle_subtitulo">Medios de transporte disponibles en el tiquete</string>
+
+  <string name="l_process_subtitle">Espere mientras se realiza la operación</string>
+  <string name="l_step1">Ubique su teléfono en el lector</string>
+  <string name="l_step2">Espere mientras se efectúa la operación</string>
+  <string name="l_step3">Operación finalizada con éxito</string>
+
+  <string name="b_continuar">Continuar</string>
+  <string name="b_volver_menu">Volver al menú principal</string>
+  <string name="b_validar">Validar</string>
 
 </resources>

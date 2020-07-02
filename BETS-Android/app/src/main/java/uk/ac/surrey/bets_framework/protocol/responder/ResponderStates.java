@@ -5,6 +5,8 @@
  */
 package uk.ac.surrey.bets_framework.protocol.responder;
 
+import android.util.Log;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -110,7 +112,8 @@ public class ResponderStates {
      * @return What needs to happen for this chunked request.
      */
     protected ChunkedRequest handleRequestChunk(APDUCommand command, byte[] data) {
-      ResponderSharedMemory sharedMemory = (ResponderSharedMemory) this.getSharedMemory();
+
+       ResponderSharedMemory sharedMemory = (ResponderSharedMemory) this.getSharedMemory();
       ChunkedRequest result = new ChunkedRequest();
 
       // If this is a put, we need to process the response code on the end.
@@ -166,6 +169,9 @@ public class ResponderStates {
      * @return An action which contains the next chunk, if needed.
      */
     protected Action<NFCAndroidCommand> handleResponseChunk(APDUCommand command, Action<NFCAndroidCommand> action) {
+
+      Log.d("MyLog", "handleResponseChunk");
+
       ResponderSharedMemory sharedMemory = (ResponderSharedMemory) this.getSharedMemory();
       Action<NFCAndroidCommand> result = null;
 
@@ -334,7 +340,7 @@ public class ResponderStates {
       LOG.info("{}", stateMachine);
 
       if ((stateMachine != null) && stateMachine.run(message)) {
-        APDUService.sendLocalBroadcast(stateMachine.getClass().getSimpleName());
+        //APDUService.sendLocalBroadcast(stateMachine.getClass().getSimpleName());
 
         // Extract the response from the state machine.
         action = new Action<>(Action.Status.END_SUCCESS, Action.NO_STATE_CHANGE, NFCAndroidCommand.RESPONSE, (
@@ -474,7 +480,7 @@ public class ResponderStates {
 
             case PUT:
               LOG.info("setup (server)");
-              APDUService.sendLocalBroadcast("Setup");
+              //APDUService.sendLocalBroadcast("Setup");
               if (this.setup(data)) {
                 action = new Action<>(Action.Status.END_SUCCESS, 2, NFCAndroidCommand.RESPONSE, NFCAndroidSharedMemory
                     .RESPONSE_OK, 0);
@@ -487,7 +493,7 @@ public class ResponderStates {
 
             case GET:
               LOG.info("tear down");
-              APDUService.sendLocalBroadcast("Tear Down");
+              //APDUService.sendLocalBroadcast("Tear Down");
               byte[] timingsResponse = this.tearDown();
 
               if (timingsResponse != null) {
@@ -515,7 +521,7 @@ public class ResponderStates {
 
       // If we have finished tera down, clear the broadcast message.
       if (action.getNextState() == 0) {
-        APDUService.sendLocalBroadcast(null);
+        //APDUService.sendLocalBroadcast(null);
       }
 
       return action;

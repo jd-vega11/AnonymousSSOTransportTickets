@@ -8,52 +8,57 @@
  * Application build file.
  *
  * @author Matthew Casey
+ * Modified by Juan D. Vega (Universidad de los Andes - Colombia)
  */
 
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion '27.0.3'
-  def verCode=20109
-  def verName="2.01.09"
-  defaultConfig {
-    applicationId "uk.ac.surrey.bets_framework.dice"
-    minSdkVersion 19
-    targetSdkVersion 25
-    versionCode verCode
-    versionName verName
-    setProperty("archivesBaseName","DICE-$versionName")
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    resValue 'string', 'app_name', 'DICE'
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-      resValue "string", "app_name", "DICE-"+verName
+    compileSdkVersion 28
+    def verCode = 20109
+    def verName = "2.01.09"
+    defaultConfig {
+        applicationId "uk.ac.surrey.bets_framework.dice"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode verCode
+        versionName verName
+        setProperty("archivesBaseName", "RuedaS-$versionName")
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resValue 'string', 'app_name', 'RuedaS'
     }
-  }
-  productFlavors {
-  }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "RuedaS-" + verName
+        }
+    }
+    productFlavors {
+    }
 }
 
 dependencies {
-  implementation fileTree(include: ['*.jar'], dir: 'libs')
-  implementation 'com.android.support:appcompat-v7:' + rootProject.supportLibVersion
-  implementation 'com.google.code.gson:gson:' + rootProject.gsonVersion
-  implementation 'org.slf4j:slf4j-api:' + slf4jVersion
-  implementation 'org.bouncycastle:bcprov-jdk15on:'+bcVersion
-  implementation 'com.github.tony19:logback-android-core:' + logbackVersion
-  implementation('com.github.tony19:logback-android-classic:' + logbackVersion) {
-    exclude group: 'com.google.android', module: 'android'
-  }
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:' + rootProject.supportLibVersion
+    implementation 'com.google.code.gson:gson:' + rootProject.gsonVersion
+    implementation 'org.slf4j:slf4j-api:' + slf4jVersion
+    implementation 'org.bouncycastle:bcprov-jdk15on:' + bcVersion
+    implementation 'com.github.tony19:logback-android-core:' + logbackVersion
+    implementation('com.github.tony19:logback-android-classic:' + logbackVersion) {
+        exclude group: 'com.google.android', module: 'android'
+    }
 
-  implementation files('libs/jpbc-api-2.0.0.jar')
-  implementation files('libs/jpbc-plaf-2.0.0.jar')
+    implementation files('libs/jpbc-api-2.0.0.jar')
+    implementation files('libs/jpbc-plaf-2.0.0.jar')
 
-  androidTestImplementation('com.android.support.test.espresso:espresso-core:' + rootProject.espressoVersion, {
-    exclude group: 'com.android.support', module: 'support-annotations'
-  })
-  testImplementation 'junit:junit:' + rootProject.junitVersion
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    androidTestImplementation('androidx.test.espresso:espresso-core:' + rootProject.espressoVersion, {
+        exclude group: 'androidx', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:' + rootProject.junitVersion
+
+    implementation 'com.google.android.material:material:1.3.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
 }

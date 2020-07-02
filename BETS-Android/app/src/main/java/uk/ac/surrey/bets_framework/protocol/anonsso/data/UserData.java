@@ -62,7 +62,7 @@ public class UserData implements AnonSSOSharedMemory.ActorData {
     // generate the private key
     this.x_U = crypto.secureRandom(p);
 
-    // compute the public key
+    // compute the pseudonym
     this.Y_U = xi.mul(this.x_U).getImmutable();
 
     this.currentTimeInMilliSec=BigInteger.valueOf(System.currentTimeMillis());

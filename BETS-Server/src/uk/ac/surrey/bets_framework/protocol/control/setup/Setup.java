@@ -43,6 +43,11 @@ public class Setup extends NFCReaderStateMachine {
 
     this.sharedMemory.serverData = serverData;
   }
+  
+  public Setup()
+  {
+	  super(Arrays.asList(new ControlStates.ControlState0(), new ControlStates.ControlState1()));
+  }
 
   /**
    * @return The shared memory for the state machine.

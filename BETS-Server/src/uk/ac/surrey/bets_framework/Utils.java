@@ -7,6 +7,7 @@ package uk.ac.surrey.bets_framework;
 
 import java.io.File;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -79,7 +80,8 @@ public class Utils {
 
       while (resources.hasMoreElements()) {
         final URL resource = resources.nextElement();
-        directories.add(new File(resource.getFile()));
+        
+        directories.add(new File(URLDecoder.decode( resource.getFile(), "UTF-8" ) ));
       }
 
       // Now find all the classes in these directories.

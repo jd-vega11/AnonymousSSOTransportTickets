@@ -10,9 +10,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 /**
  * Launch activity for NFC application.
@@ -36,9 +39,33 @@ public class LaunchActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_launch);
 
+   /* final Button button = (Button) findViewById(R.id.button_example);
+    button.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View v) {
+        iniciarServicioNFC();
+      }
+    });*/
+
     // Register for local broadcasts.
     IntentFilter filter = new IntentFilter(APDUService.BROADCAST_ACTION);
     LocalBroadcastManager.getInstance(this).registerReceiver(this.receiver, filter);
+
+    final Button b_login = (Button)findViewById(R.id.b_login);
+    b_login.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View v) {
+        Intent intent = new Intent(LaunchActivity.this, MainManuActivity.class);
+        startActivity(intent);
+      }
+    });
+
+
+    final Button b_registrarse = (Button)findViewById(R.id.b_signup);
+    b_registrarse.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View v) {
+        Intent intent = new Intent(LaunchActivity.this, SignUpActivity.class);
+        startActivity(intent);
+      }
+    });
 
   }
 
@@ -48,9 +75,16 @@ public class LaunchActivity extends AppCompatActivity {
   @Override
   protected void onDestroy() {
     // Unregister the broadcast receiver.
-    LocalBroadcastManager.getInstance(this).unregisterReceiver(this.receiver);
-
+    //LocalBroadcastManager.getInstance(this).unregisterReceiver(this.receiver);
+    Intent intent = new Intent(this, APDUService.class);
+    stopService(intent);
     super.onDestroy();
+  }
+
+  private void iniciarServicioNFC()
+  {
+    Intent intent = new Intent(this, APDUService.class);
+    startService(intent);
   }
 
   /**
@@ -66,7 +100,7 @@ public class LaunchActivity extends AppCompatActivity {
      */
     @Override
     public void onReceive(Context context, Intent intent) {
-      TextView textView = (TextView) LaunchActivity.this.findViewById(R.id.processingTextView);
+      /*TextView textView = (TextView) LaunchActivity.this.findViewById(R.id.processingTextView);
 
       if (textView != null) {
         String message = intent.getStringExtra(APDUService.BROADCAST_ACTION_MESSAGE);
@@ -77,7 +111,7 @@ public class LaunchActivity extends AppCompatActivity {
         else {
           textView.setText(R.string.noProcessingText);
         }
-      }
+      }*/
     }
   }
 }

@@ -13,11 +13,67 @@
 <resources>
 
   <!-- Base application theme. -->
-  <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+  <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorOnSurface">@color/colorOnSurface</item>
   </style>
+
+  <style name="top_bar_style" parent="@android:style/TextAppearance.Medium">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:fontFamily">sans-serif</item>
+  </style>
+
+  <style name="login_app_name" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">50sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textColor">@color/colorPrimary</item>
+  </style>
+
+  <style name="title" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">30sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textColor">@color/colorPrimary</item>
+  </style>
+
+  <style name="subtitle" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">17sp</item>
+    <item name="android:fontFamily">sans-serif-light</item>
+    <item name="android:textColor">@color/colorPrimaryDark</item>
+    <item name="android:gravity">center</item>
+  </style>
+  <style name="paragraph" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">14sp</item>
+    <item name="android:fontFamily">sans-serif-light</item>
+    <item name="android:textColor">@color/colorPrimaryDark</item>
+  </style>
+
+  <style name="dataLabel" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">24sp</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textColor">@color/black</item>
+  </style>
+
+  <style name="transport_options" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">23sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textColor">@color/white</item>
+  </style>
+
+  <style name="transport_fares" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">20sp</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:fontFamily">sans-serif-light</item>
+    <item name="android:textColor">@color/black</item>
+  </style>
+
 
 </resources>

@@ -1,55 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uk.ac.surrey.bets_framework">
+    <!-- Permissions and hardware requirements. -->
+    <uses-permission android:name="android.permission.NFC" />
 
-<!--
-  -  DICE NFC evaluation.
-  -
-  -  (c) University of Surrey and Pervasive Intelligence Ltd 2017.
--->
-<!--
-  -  Application manifest file.
-  -
-  -  @author Matthew Casey
--->
-<manifest package="uk.ac.surrey.bets_framework"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="true" />
 
-  <!-- Permissions and hardware requirements. -->
-  <uses-permission android:name="android.permission.NFC"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".TicketDetailActivity"></activity>
+        <activity android:name=".TicketSummaryActivity" />
+        <activity android:name=".TrainActivity" />
+        <activity android:name=".ProtocolProcessActivity" />
+        <activity android:name=".NewTicketActivity" />
+        <activity android:name=".MainManuActivity" />
+        <activity android:name=".SignUpActivity" /> <!-- Launch activity. -->
+        <activity android:name=".LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-  <uses-feature
-    android:name="android.hardware.nfc"
-    android:required="true"/>
-  <uses-feature
-    android:name="android.hardware.nfc.hce"
-    android:required="true"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- APDU service which responds to the NFC reader. -->
+        <service
+            android:name=".APDUService"
+            android:description="@string/serviceDescription"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
 
-  <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme">
-
-    <!-- Launch activity. -->
-    <activity android:name="uk.ac.surrey.bets_framework.LaunchActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
-    </activity>
-
-    <!-- APDU service which responds to the NFC reader. -->
-    <service
-      android:name="uk.ac.surrey.bets_framework.APDUService"
-      android:exported="true"
-      android:permission="android.permission.BIND_NFC_SERVICE">
-      <intent-filter>
-        <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
-      </intent-filter>
-      <meta-data
-        android:name="android.nfc.cardemulation.host_apdu_service"
-        android:resource="@xml/apduservice"/>
-    </service>
-  </application>
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/apduservice" />
+        </service>
+    </application>
 
 </manifest>

@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.nfc.cardemulation.HostApduService;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +56,7 @@ public class APDUService extends HostApduService {
    *
    * @param message The message payload to sent.
    */
-  public static void sendLocalBroadcast(String message) {
+  /*public static void sendLocalBroadcast(String message) {
     // Get the context.
     if (weakContext != null) {
       Context context = weakContext.get();
@@ -72,7 +72,7 @@ public class APDUService extends HostApduService {
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
       }
     }
-  }
+  }*/
 
   /**
    * Gets the list of available classes in Android for the current package.
@@ -153,6 +153,8 @@ public class APDUService extends HostApduService {
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
     LOG.trace("onStartCommand {}, {}, {}", intent, flags, startId);
+
+
     return super.onStartCommand(intent, flags, startId);
   }
 
@@ -210,7 +212,7 @@ public class APDUService extends HostApduService {
 
     if (result == null) {
       result = NFCAndroidSharedMemory.RESPONSE_FUNCTION_NOT_SUPPORTED;
-      sendLocalBroadcast(null);
+      //sendLocalBroadcast(null);
     }
 
     LOG.trace("result {}", Utils.toHex(result));

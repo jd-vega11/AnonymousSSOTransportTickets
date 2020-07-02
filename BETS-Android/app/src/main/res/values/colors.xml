@@ -11,7 +11,27 @@
   -  @author Matthew Casey
 -->
 <resources>
-  <color name="colorPrimary">#3F51B5</color>
-  <color name="colorPrimaryDark">#303F9F</color>
-  <color name="colorAccent">#FF4081</color>
+  <color name="colorPrimary">#2962ff</color>
+  <color name="colorPrimaryDark">#0039cb</color>
+  <color name="colorAccent">#fbc00e</color>
+  <color name="colorSecAccent">#eaeae0</color>
+  <color name="colorOnSurface">#808080</color>
+  <color name="white">#ffffff</color>
+  <color name="black">#000000</color>
+
+  <color name="colorTransmilenioSoft">#FF6961</color>
+  <color name="colorTransmilenio">#e7625f</color>
+
+  <color name="colorSitpSoft">#AEC6CF</color>
+  <color name="colorSitp">#385e72</color>
+
+  <color name="colorTrenSoft">#77DD77</color>
+  <color name="colorTren">#1d741b</color>
+
+  <color name="colorMetroSoft">#FFB347</color>
+  <color name="colorMetro">#ff5412</color>
+
+  <color name="colorValidar">#66CD00</color>
+
+
 </resources>

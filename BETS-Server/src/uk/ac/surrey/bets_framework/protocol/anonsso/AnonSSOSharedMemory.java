@@ -33,7 +33,6 @@ import it.unisa.dia.gas.plaf.jpbc.pairing.parameters.PropertiesParameters;
 import uk.ac.surrey.bets_framework.Crypto;
 import uk.ac.surrey.bets_framework.GsonUtils;
 import uk.ac.surrey.bets_framework.protocol.NFCSharedMemory;
-import uk.ac.surrey.bets_framework.protocol.anonproxy.AnonProxySharedMemory.Actor;
 import uk.ac.surrey.bets_framework.protocol.anonsso.data.CentralAuthorityData;
 import uk.ac.surrey.bets_framework.protocol.anonsso.data.CentralVerifierData;
 import uk.ac.surrey.bets_framework.protocol.anonsso.data.IssuerData;
