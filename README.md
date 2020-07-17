@@ -96,3 +96,14 @@ Con el fin de probar que el prototipo está funcionando de forma apropiada, est�
 2.	En todas las operaciones del protocolo AnonSSO (registro, emisión y validación), la aplicación móvil indica que debe poner el dispositivo móvil en el lector NFC. Una vez hecho esto, luego indica que se está efectuando la operación con un mensaje de espera. Finalmente, si todo está funcionando bien, se muestra claramente un mensaje que indica que la operación finalizó con éxito. En caso contrario, se muestra un mensaje de error y en la consola de Android Studio se puede consultar el log de las excepciones generadas. 
 
 3.	Cuando el usuario ubica su dispositivo en el lector NFC luego de hacer una solicitud de registro, emisión o validación, la consola del servidor debe mostrar casi de forma inmediata que se estableció un vinculo con un cliente y que se inició alguno de estos procesos. Asimismo, se muestra de forma detallada el estado actual de la operación (por ejemplo, en el proceso de registro se muestran mensajes que indican que la autoridad central generó las credenciales). Al finalizar se muestra un mensaje de éxito. En caso contrario, se indica el error y se imprime el mensaje de la excepción correspondiente en caso de haberse generado.
+
+### Video
+
+Haga click en la imagen para abrir el video que muestra el funcionamiento de la aplicación móvil
+
+ <a href="https://youtu.be/WO3yCEQdFJA" target="_blank"><img src="https://github.com/jd-vega11/jd-vega11.github.io/blob/master/img/RuedaS.jpg" alt="Video proyecto de grado" width="711px"/></a> 
+
+
+
+
+
