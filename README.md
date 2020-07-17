@@ -99,7 +99,7 @@ Con el fin de probar que el prototipo está funcionando de forma apropiada, est�
 
 ### Video
 
-Haga click en la imagen para abrir el video que muestra el funcionamiento de la aplicación móvil
+Haga click en la imagen que se muestra a continuación para abrir el video que explica el funcionamiento de la aplicación móvil.
 
  <a href="https://youtu.be/WO3yCEQdFJA" target="_blank"><img src="https://github.com/jd-vega11/jd-vega11.github.io/blob/master/img/RuedaS.jpg" alt="Video proyecto de grado" width="711px"/></a> 
 
